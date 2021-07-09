@@ -10,10 +10,18 @@ import CardMedia from '@material-ui/core/CardMedia';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-// import { spacing } from '@material-ui/system';
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles(theme => {
+    return {
+    lightDarkButtons: {
+        color: theme.palette.type === "dark" ? theme.palette.primary.light : theme.palette.primary.main
+    }}
+});
 
-const ProjectCard = ({card: {id, heading, description, more, links, img}}) => {
+const ProjectCard = ({card: {id, heading, description, more, links, img}, currentTheme}) => {
+    const classes = useStyles();
+
     return (
 
             <Grid item key={id} xs={12} sm={6}>
@@ -54,7 +62,9 @@ const ProjectCard = ({card: {id, heading, description, more, links, img}}) => {
 
                     <CardActions>
                         {links.map((link, i) => (
-                            <Button key={i} size="small" color="primary" href={ link.live ? link.live : link.github }>
+                            <Button key={i} size="small" 
+                                    href={ link.live ? link.live : link.github }
+                                    className={classes.lightDarkButtons}>
                                 {link.live ? "View" : "Code"}
                             </Button>
                         ))}

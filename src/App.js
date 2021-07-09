@@ -19,15 +19,15 @@ const theme = (colourPalette) => (
       palette: {
         type: colourPalette,
         primary: {
-            light: '#f6685e',
-            main: '#f44336',
-            dark: '#aa2e25',
+            light: '#00BCD9',
+            main: '#00798b',
+            dark: '#004D59',
             contrastText: '#fff',
           },
           secondary: {
-            light: '#ffcf33',
-            main: "#ffc400",
-            dark: '#b28900',
+            light: '#E6CC0B',
+            main: "#D99C16",
+            dark: '#A67711',
             contrastText: '#000',
           },
       },
@@ -99,9 +99,6 @@ export default function SignInSide() {
                             <Grid container spacing={5}>
                                 <Grid item xs={false} sm={3} />
                                 <Grid item xs={12} sm={6}>
-
-                                    
-
                                     <Typography varient="p">
                                         A creative, friendly and adaptable full stack web developer with a diverse background in live events, design and project management. Highly commended for my ability to rapidly pick up new skills and methods to a high standard. In addition to my technical skills, I bring strong interpersonal skills, experience managing teams and projects, and extensive knowledge in devising and implementing new ideas. An adventurous coder with a career history of bringing ideas to life through technology.
                                     </Typography>
@@ -109,7 +106,7 @@ export default function SignInSide() {
                                 <Grid item xs={false} sm={3} />
                         
                                 {projectData.map((card) => (
-                                    <ProjectCard card={card}/>
+                                    <ProjectCard card={card} />
                                 ))}
 
                             </Grid>
