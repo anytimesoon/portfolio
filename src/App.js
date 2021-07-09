@@ -17,6 +17,18 @@ const theme = (colourPalette) => (
     createTheme({
       palette: {
         type: colourPalette,
+        primary: {
+            light: '#f6685e',
+            main: '#f44336',
+            dark: '#aa2e25',
+            contrastText: '#fff',
+          },
+          secondary: {
+            light: '#33bfff',
+            main: '#f44336',
+            dark: '#007bb2',
+            contrastText: '#000',
+          },
       },
       typography: {
         fontFamily: [

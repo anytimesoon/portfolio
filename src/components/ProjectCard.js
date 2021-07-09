@@ -13,22 +13,26 @@ import Typography from '@material-ui/core/Typography';
 // import { spacing } from '@material-ui/system';
 
 
-const ProjectCard = ({card: {id, heading, description, more, links}}) => {
+const ProjectCard = ({card: {id, heading, description, more, links, img}}) => {
     return (
 
             <Grid item key={id} xs={12} sm={6}>
                 <Card>
-                <CardMedia
-                    image="{CovidImage}"
-                    title={heading}
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                    {heading}
-                    </Typography>
-                    <Typography>
-                    {description}
-                    </Typography>
+                    <CardMedia
+                        image={img}
+                        title={heading}
+                        style={{height: 200}}
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                        {heading}
+                        </Typography>
+                        <Typography>
+                        {description}
+                        </Typography>
+                        
+                    </CardContent>
+
                     <Accordion>
                         <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
@@ -47,16 +51,14 @@ const ProjectCard = ({card: {id, heading, description, more, links}}) => {
                         </Typography>
                         </AccordionDetails>
                     </Accordion>
-                </CardContent>
-                <CardActions>
-        
-                {links.map((link, i) => (
-                    <Button key={i} size="small" color="primary" href={ link.live ? link.live : link.github }>
-                        {link.live ? "View" : "Code"}
-                    </Button>
-                ))}
-                    
-                </CardActions>
+
+                    <CardActions>
+                        {links.map((link, i) => (
+                            <Button key={i} size="small" color="primary" href={ link.live ? link.live : link.github }>
+                                {link.live ? "View" : "Code"}
+                            </Button>
+                        ))}
+                    </CardActions>
                 </Card>
             </Grid>
     );

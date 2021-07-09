@@ -1,3 +1,6 @@
+import DrivingVision from '../img/driving-vision.jpg'
+import Covid from '../img/covid-tracker.png'
+
 export const projectData = [{
     id: 1,
     heading: 'Driving Vision',
@@ -5,7 +8,8 @@ export const projectData = [{
     more: [ "point 1", 
             "point 2", 
             "point 3"],
-    links: [{ live: "https://www.driving.vision" }]
+    links: [{ live: "https://www.driving.vision" }],
+    img: DrivingVision
   }, {
     id: 2,
     heading: "Covid 19 Tracker",
@@ -14,5 +18,6 @@ export const projectData = [{
             "Axios to handle async requests using open API data",
             "More good stuff"
         ],
-    links: [{live: "https://covid-19-tracker.delartigue.co.uk/"}, { github: "https://www.github.com/anytimesoon/covid-19-tracker"}]
+    links: [{live: "https://covid-19-tracker.delartigue.co.uk/"}, { github: "https://www.github.com/anytimesoon/covid-19-tracker"}],
+    img: Covid
   }];
