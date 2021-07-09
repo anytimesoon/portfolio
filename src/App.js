@@ -53,10 +53,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center',
   },
   paper: {
-    margin: theme.spacing(8, 4),
+    margin: theme.spacing(4, 4),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
+  },
+  pageContainer: {
+    height: '100vh',
+    overflow: 'auto'
   },
   themeSwitch: {
       position: 'absolute',
@@ -79,22 +83,22 @@ export default function SignInSide() {
                     <CssBaseline />
                     <Grid item xs={false} sm={4} className={classes.image} />
                     <Grid item xs={12} sm={8} component={Paper} elevation={6} square>
-
+                        <div className={classes.pageContainer}>
                             <AppBar position="static">
                                 <Toolbar>
                                     <Typography variant="h6">
-                                        Damien de Lartigue's Portfolio
+                                        Damien de Lartigue
                                     </Typography>
                                     <FormGroup className={classes.themeSwitch}>
                                         <FormControlLabel   control={<Switch checked={isDarkTheme} onChange={changeTheme} />} 
                                                             color="secondary" 
-                                                            label="Change Theme" 
+                                                            label="Theme" 
                                                             labelPlacement="start"/>
                                     </FormGroup>
                                 </Toolbar>
                             </AppBar>
                             
-                        <div className={classes.paper}>
+                          <div className={classes.paper}>
                             
                             <Grid container spacing={5}>
                                 <Grid item xs={false} sm={3} />
@@ -110,6 +114,7 @@ export default function SignInSide() {
                                 ))}
 
                             </Grid>
+                          </div>
                         </div>
                     </Grid>
                         
