@@ -10,7 +10,6 @@ import {    AppBar,
             Typography } from '@material-ui/core';    
 import ProjectCard from './components/ProjectCard';
 import { createTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import { positions } from '@material-ui/system';
 import { projectData } from './components/ProjectData';
 import './App.css'
 import DamienImage from './img/damien.jpg';
