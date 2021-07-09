@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
+import {    AppBar,      
+            CssBaseline,
+            FormControlLabel,
+            FormGroup,
+            Grid,
+            Paper,
+            Switch,
+            Toolbar,
+            Typography } from '@material-ui/core';    
 import ProjectCard from './components/ProjectCard';
-import Switch from '@material-ui/core/Switch';
-import Typography from '@material-ui/core/Typography';
 import { createTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { positions } from '@material-ui/system';
 import { projectData } from './components/ProjectData';
-import { spacing } from '@material-ui/system'
 import './App.css'
 import DamienImage from './img/damien.jpg';
 
@@ -24,9 +26,9 @@ const theme = (colourPalette) => (
             contrastText: '#fff',
           },
           secondary: {
-            light: '#33bfff',
-            main: '#f44336',
-            dark: '#007bb2',
+            light: '#ffcf33',
+            main: "#ffc400",
+            dark: '#b28900',
             contrastText: '#000',
           },
       },
@@ -55,10 +57,11 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(8, 4),
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'center'
   },
-  spacingContainer: {
-    padding: "22px",
+  themeSwitch: {
+      position: 'absolute',
+      right: '2em'
   }
 }));
 
@@ -73,23 +76,32 @@ export default function SignInSide() {
     return (
         <ThemeProvider theme={isDarkTheme ? theme("dark") : theme("light") }>
             <div className={classes.spacingContainer}>
-                <Grid container component="main" className={classes.root} spacing={5}>
+                <Grid container component="main" className={classes.root}>
                     <CssBaseline />
                     <Grid item xs={false} sm={4} className={classes.image} />
                     <Grid item xs={12} sm={8} component={Paper} elevation={6} square>
+
+                            <AppBar position="static">
+                                <Toolbar>
+                                    <Typography variant="h6">
+                                        Damien de Lartigue's Portfolio
+                                    </Typography>
+                                    <FormGroup className={classes.themeSwitch}>
+                                        <FormControlLabel   control={<Switch checked={isDarkTheme} onChange={changeTheme} />} 
+                                                            color="secondary" 
+                                                            label="Change Theme" 
+                                                            labelPlacement="start"/>
+                                    </FormGroup>
+                                </Toolbar>
+                            </AppBar>
+                            
                         <div className={classes.paper}>
+                            
                             <Grid container spacing={5}>
                                 <Grid item xs={false} sm={3} />
                                 <Grid item xs={12} sm={6}>
-                                    <Typography component="h1" variant="h3">
-                                        Damien de Lartigue
-                                    </Typography>
 
-                                    <FormGroup>
-                                        <FormControlLabel   control={<Switch checked={isDarkTheme} onChange={changeTheme} />}
-                                                            label="Change Theme"
-                                        />
-                                    </FormGroup>
+                                    
 
                                     <Typography varient="p">
                                         A creative, friendly and adaptable full stack web developer with a diverse background in live events, design and project management. Highly commended for my ability to rapidly pick up new skills and methods to a high standard. In addition to my technical skills, I bring strong interpersonal skills, experience managing teams and projects, and extensive knowledge in devising and implementing new ideas. An adventurous coder with a career history of bringing ideas to life through technology.
