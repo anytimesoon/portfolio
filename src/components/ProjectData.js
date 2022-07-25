@@ -1,5 +1,6 @@
 import DrivingVision from '../img/driving-vision.jpg'
 import Covid from '../img/covid-tracker.png'
+import EU from '../img/eu.png'
 
 export const projectData = [{
     id: 1,
@@ -19,7 +20,7 @@ export const projectData = [{
             "Frontend will use Svelte and tailwind"
         ],
     links: [{ github: "https://www.github.com/anytimesoon/eurovision"}],
-    img: Covid
+    img: EU
   }, {
     id: 3,
     heading: "Covid 19 Tracker",
