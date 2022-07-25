@@ -13,6 +13,15 @@ export const projectData = [{
     img: DrivingVision
   }, {
     id: 2,
+    heading: "Eurovision social",
+    description: "Get together with friends and chat live during eurovision, then vote for your favourite acts. This project is a work in progress, but the vision is to provide an easily deployable private server for anyone to be able to enjoy Eurovision with their friends.",
+    more: [ "Backend API written in Go", 
+            "Frontend will use Svelte and tailwind"
+        ],
+    links: [{ github: "https://www.github.com/anytimesoon/eurovision"}],
+    img: Covid
+  }, {
+    id: 3,
     heading: "Covid 19 Tracker",
     description: "Track cases of covid-19. Visualise statistics by country or globally",
     more: [ "React frontend with using Material-UI for styling", 
