@@ -1,6 +1,7 @@
 import DrivingVision from '../img/driving-vision.jpg'
 import Covid from '../img/covid-tracker.png'
 import EU from '../img/eu.png'
+import Psqlbu from '../img/psqlbu.png'
 
 export const projectData = [{
     id: 1,
@@ -14,21 +15,28 @@ export const projectData = [{
     img: DrivingVision
   }, {
     id: 2,
-    heading: "Eurovision social",
-    description: "Get together with friends and chat live during eurovision, then vote for your favourite acts. This project is a work in progress, but the vision is to provide an easily deployable private server for anyone to be able to enjoy Eurovision with their friends.",
-    more: [ "Backend API written in Go", 
-            "Frontend will use Svelte and tailwind"
+    heading: "Eurovision party",
+    description: "Get together with friends and chat live during eurovision, then vote for your favourite acts.",
+    more: [ "Backend API written in Go. Frontend written in Svelte and tailwind. This is a self hostable application deployed using docker."
         ],
     links: [{ github: "https://www.github.com/anytimesoon/eurovision"}],
     img: EU
   }, {
     id: 3,
-    heading: "Covid 19 Tracker",
+    heading: "Postgres Backup",
     description: "Track cases of covid-19. Visualise statistics by country or globally",
-    more: [ "React frontend with using Material-UI for styling", 
+    more: [ "Written in go, this is a configurable command line util that can back up and restore postgres databases. Designed to work on a cron job."
+    ],
+    links: [{ github: "https://github.com/anytimesoon/psql-remote-backup-restore"}],
+    img: Psqlbu
+    }, {
+        id: 3,
+        heading: "Covid 19 Tracker",
+        description: "Track cases of covid-19. Visualise statistics by country or globally",
+        more: [ "React frontend with using Material-UI for styling",
             "Axios to handle async requests using open API data",
             "Data visualised using chart.js"
         ],
-    links: [{live: "https://covid-19-tracker.delartigue.co.uk/"}, { github: "https://www.github.com/anytimesoon/covid-19-tracker"}],
-    img: Covid
-  }];
+        links: [{live: "https://covid-19-tracker.delartigue.co.uk/"}, { github: "https://www.github.com/anytimesoon/covid-19-tracker"}],
+        img: Covid
+    }];
